@@ -1,0 +1,3 @@
+<div class="buttons-panel" ng-style="{height: ctrl.height}">
+  <button class="btn navbar-button" ng-repeat="b in ctrl.panel.buttons track by b.id" ng-click="Action(b.id)" style="color: b.color">{{b.name}}</button>
+</div>

@@ -1,0 +1,62 @@
+<div class="editor-row">
+	<button class="gf-form btn navbar-button" ng-click="ctrl.AddButton()">Add button</button>
+	<button class="gf-form btn navbar-button" ng-click="ctrl.ClearButtons()">Clear</button><br />
+
+
+	<div class="section gf-form-group" ng-repeat="b in ctrl.panel.buttons track by b.id">
+		<h5 class="section-heading">Button <button class="gf-form btn navbar-button" ng-click="ctrl.RemoveButton(b.id)">Remove</button>
+		</h5>
+
+		<div class="gf-form">
+			<label class="gf-form-label width-12">Button Text</label>
+			<input type="text" class="gf-form-input max-width-16" ng-model="b.name" ng-change="ctrl.render()" ng-model-onblur>
+		</div>
+
+		<div class="gf-form">
+			<label class="gf-form-label width-12">URL</label>
+			<input type="text" class="gf-form-input max-width-16" ng-model="b.request.url" ng-change="ctrl.render()"
+			 ng-model-onblur>
+		</div>
+
+		<div class="gf-form">
+			<label class="gf-form-label width-12">Method</label>
+			<span class="gf-form-select-wrapper max-width-16">
+				<select class="input-small gf-form-input " ng-model="b.request.method" ng-options="t for t in ['GET', 'POST']"
+				 ng-change="ctrl.render()"></select>
+			</span>
+		</div>
+
+		<gf-form-switch class="gf-form" label-class="width-7" switch-class="max-width-6" label="Basic Auth" checked="b.request.auth.status"
+		 on-change="ctrl.render()">
+			<label for="check-81" class="gf-form-label width-7 pointer" ng-show="ctrl.label">
+				Basic Auth
+				<!---->
+			</label>
+			<!---->
+			<div class="gf-form-switch max-width-6" ng-if="ctrl.show">
+				<input id="check-81" type="checkbox" ng-model="ctrl.checked" ng-change="ctrl.internalOnChange()" class="ng-pristine ng-untouched ng-valid ng-empty">
+				<label for="check-81" data-on="true" data-off="false"></label>
+			</div>
+			<!---->
+		</gf-form-switch>
+
+		<div class="gf-form" ng-show="b.request.auth.status">
+			<label class="gf-form-label width-6">Username</label>
+			<input type="text" class="gf-form-input max-width-16" ng-model="b.request.auth.username" ng-change="ctrl.render()"
+			 ng-model-onblur>
+		</div>
+
+		<div class="gf-form" ng-show="b.request.auth.status">
+			<label class="gf-form-label width-6">Password</label>
+			<input type="password" class="gf-form-input max-width-16" ng-model="b.request.auth.password" ng-change="ctrl.render()"
+			 ng-model-onblur>
+		</div>
+
+		<div class="gf-form gf-form--v-stretch">
+			<span class="gf-form-label width-7">Body</span>
+			<textarea class="gf-form-input width-25 ng-pristine ng-valid ng-empty ng-touched" rows="10" ng-model="b.request.body"
+			 placeholder="Body"></textarea>
+		</div>
+		<!-- <button class="gf-form btn navbar-button" ng-click="ctrl.DuplicateButton(b.id)">Duplicate</button> -->
+	</div>
+</div>

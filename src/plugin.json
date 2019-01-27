@@ -1,0 +1,47 @@
+{
+  "type": "panel",
+  "name": "Buttons Panel",
+  "id": "thbkrshw-buttons-panel",
+  "info": {
+    "description": "Buttons panel for Grafana",
+    "author": {
+      "name": "Harold Leboulanger",
+      "url": "https://github.com/thbkrshw/buttons-panel"
+    },
+    "keywords": [
+      "button",
+      "http",
+      "panel"
+    ],
+    "logos": {
+      "small": "img/buttons_panel_logo.svg",
+      "large": "img/buttons_panel_logo.svg"
+    },
+    "links": [
+      {
+        "name": "Project site",
+        "url": "https://github.com/thbkrshw/buttons-panel"
+      },
+      {
+        "name": "MIT License",
+        "url": "https://github.com/thbkrshw/buttons-panel/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [
+      {
+        "name": "Showcase",
+        "path": "img/screenshot-showcase.png"
+      },
+      {
+        "name": "Options",
+        "path": "img/screenshot-options.png"
+      }
+    ],
+    "version": "0.1.0",
+    "updated": "2019-01-20"
+  },
+  "dependencies": {
+    "grafanaVersion": "5.x.x",
+    "plugins": []
+  }
+}
